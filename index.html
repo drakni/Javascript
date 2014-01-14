@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello World!</title>
+		<style>
+		.draggableBox {
+			position: absolute;
+			width: 80px; height: 60px;
+			padding-top: 10px;
+			text-align: center;
+			font-size: 40px;
+			background-color: #222;
+			color: #CCC;
+			cursor: move;
+		}
+		</style>
+	</head>
+
+	<body>
+
+		
+		<script>
+		//Création d'un namespace 
+		var nameSpaceGamer = nameSpaceGamer || {};
+
+		//Objet constructeur de la classe "Gamer"
+		nameSpaceGamer.Gamer = function (nom, prenom, age, genre, jeux) {
+			this.nom = nom;
+			this.prenom = prenom;
+			this.age = age;
+			this.genre = genre;
+			this.jeux = [];
+		};
+
+		//Ajout d'une méthode via prototype
+		nameSpaceGamer.Gamer.prototype.addJeu = function (jeu) {
+			this.jeux.push(jeu);
+		};
+
+		//Création d'une instance de Gamer (sans oublier le namespace
+		var william = new nameSpaceGamer.Gamer("Van Rensbergen", "William", 28, "Homme");
+
+		//Appel à la méthode addJeu pour ajout de jeu
+		william.addJeu("Casltelvania");
+
+		alert(william.jeux);
+		</script>
+
+	</body>
+</html>
